@@ -50,7 +50,7 @@ public class OrderTest {
     @DisplayName("중간 테이블 Order Entity 조회")
     void test2() {
         // 1번 주문 조회
-        Order order = orderRepository.findById(1L).orElseThrow(NullPointerException::new);
+        Order order = orderRepository.findById(1L).orElse(null);
 
         // order 객체를 사용하여 고객 정보 조회
         User user = order.getUser();
